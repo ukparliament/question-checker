@@ -1,0 +1,4 @@
+<% if day.date_for_answer != @questions[day_iteration.index - 1].date_for_answer %>
+	<%= content_tag( 'h2', "Date for answer #{day.date_for_answer.strftime( $DATE_DISPLAY_FORMAT )}" ) %>
+<% end -%>
+<%= render :partial => 'question', :object => day %>
