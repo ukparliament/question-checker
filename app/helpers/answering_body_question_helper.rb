@@ -1,0 +1,2 @@
+module AnsweringBodyQuestionHelper
+end

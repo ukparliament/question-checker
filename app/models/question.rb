@@ -12,6 +12,7 @@ class Question
   attr_accessor :text
   attr_accessor :asking_member_id
   attr_accessor :asking_member_name
+  attr_accessor :asking_member_sort_name
   
   def title
     self.heading || 'Untitled'

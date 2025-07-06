@@ -1,3 +1,5 @@
+<%= render :partial => 'house/nav' %>
+
 <%= list_item_count_sentence( 'question', @questions.size ) %>
 
 <%= render :partial => 'question/day', :collection => @questions %>

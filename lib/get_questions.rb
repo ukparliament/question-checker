@@ -4,7 +4,8 @@ module GetQuestions
   require 'net/http'
   require 'open-uri'
 
-  def get_questions( query )
+  # A method to return an array of questions.
+  def get_questions( house, answering_body, asking_member )
     
     # We create an array to hold the questions.
     questions = []
@@ -16,7 +17,10 @@ module GetQuestions
     take = 5000
   
     # We construct the API URL.
-    url = "https://questions-statements-api.parliament.uk/api/writtenquestions/questions?dateForAnswerWhenTo=#{late_for_answer_date}&answered=Unanswered&questionStatus=NotAnswered&includeWithdrawn=false&sessionStatus=Any&expandMember=True&&take=#{take}#{query}"
+    url = "https://questions-statements-api.parliament.uk/api/writtenquestions/questions?dateForAnswerWhenTo=#{late_for_answer_date}&answered=Unanswered&questionStatus=NotAnswered&includeWithdrawn=false&sessionStatus=Any&expandMember=True&take=#{take}"
+    url += "&house=#{house}" if house
+    url += "&answeringBodies=#{answering_body}" if answering_body
+    url += "&askingMemberId=#{asking_member}" if asking_member
     
     # We get the response from the API.
     response = Net::HTTP.get_response( URI.parse( url ) )
@@ -45,12 +49,14 @@ module GetQuestions
       question.text = question_value['questionText']
       question.asking_member_id = question_value['askingMember']['id']
       question.asking_member_name = question_value['askingMember']['name']
+      question.asking_member_sort_name = question_value['askingMember']['listAs']
       
       # ... and add it to the array of questions.
       questions << question
     end
     
-    questions = questions.sort { |a, b| b.date_for_answer <=> a.date_for_answer }
+    # We sort the questions array by date for answer.
+    questions.sort! { |a, b| b.date_for_answer <=> a.date_for_answer }
     
     # We return the questions array.
     questions

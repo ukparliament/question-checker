@@ -1,0 +1,7 @@
+<%= render :partial => 'house/nav' %>
+
+<%= list_item_count_sentence( 'tabling Member', @members.size ) %>
+
+<ol>
+	<%= render :partial => 'member/member', :collection => @members %>
+</ol>
