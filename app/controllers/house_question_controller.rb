@@ -13,9 +13,9 @@ class HouseQuestionController < ApplicationController
       @questions = get_questions( 'Commons', nil, nil )
       
       # We set the page meta information.
-      @page_title = 'Houses of Commons - Questions late for answer'
-      @multiline_page_title = "House of Commons <span class='subhead'>Questions late for answer</span>".html_safe
-      @description = "Houses of Commons."
+      @page_title = 'Houses of Commons - Questions'
+      @multiline_page_title = "House of Commons <span class='subhead'>Questions</span>".html_safe
+      @description = "Questions tabled in the Houses of Commons."
       
     # Otherwise, if the House ID is 2 ...
     elsif house == 2
@@ -24,8 +24,9 @@ class HouseQuestionController < ApplicationController
       @questions = get_questions( 'Lords', nil, nil )
       
       # We set the page meta information.
-      @page_title = 'Houses of Lords - Questions late for answer'
-      @multiline_page_title = "House of Lords <span class='subhead'>Questions late for answer</span>".html_safe
+      @page_title = 'Houses of Lords - Question'
+      @multiline_page_title = "House of Lords <span class='subhead'>Questions</span>".html_safe
+      @description = "Questions tabled in the Houses of Lords."
       
     # Otherwise, if the House ID is neither 1 nor 2 ...
     else

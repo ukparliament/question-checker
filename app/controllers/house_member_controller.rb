@@ -13,9 +13,9 @@ class HouseMemberController < ApplicationController
       @members = get_members( 'Commons' )
       
       # We set the page meta information.
-      @page_title = 'Houses of Commons - Members with questions late for answer'
-      @multiline_page_title = "House of Commons <span class='subhead'>Members with questions late for answer</span>".html_safe
-      @description = "Houses of Commons Members with questions late for answer."
+      @page_title = 'Houses of Commons - Members'
+      @multiline_page_title = "House of Commons <span class='subhead'>Members</span>".html_safe
+      @description = "Houses of Commons Members."
       
     # Otherwise, if the House ID is 2 ...
     elsif house == 2
@@ -24,9 +24,9 @@ class HouseMemberController < ApplicationController
       @members = get_members( 'Lords' )
       
       # We set the page meta information.
-      @page_title = 'Houses of Lords - Members with questions late for answer'
-      @multiline_page_title = "House of Lords <span class='subhead'>Members with questions late for answer</span>".html_safe
-      @description = "Houses of Lords Members with questions late for answer."
+      @page_title = 'Houses of Lords - Members'
+      @multiline_page_title = "House of Lords <span class='subhead'>Members</span>".html_safe
+      @description = "Houses of Lords Members."
       
     # Otherwise, if the House ID is neither 1 nor 2 ...
     else
