@@ -7,9 +7,12 @@ module QuestionHelper
     else
       description += 'An ordinary day '
     end
-    description += 'question, tabled '
-    description += ' in the House of '
-    description += question.house
+    description += 'question, tabled in the '
+    if question.house == 'Commons'
+      description += link_to( 'House of Commons', house_show_url( :house => 1 ) )
+    else
+      description += link_to( 'House of Lords', house_show_url( :house => 2 ) )
+    end
     description += ' on '
     description += question.tabled_on.strftime( $DATE_DISPLAY_FORMAT )
     description += ' to the '
