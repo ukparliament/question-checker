@@ -32,5 +32,8 @@ Rails.application.routes.draw do
   get 'members' => 'member#index', as: :member_list
   get 'members/:member' => 'member#show', as: :member_show
   
-  get 'members/:member/questions' => 'member_question#index', as: :member_question_list 
+  get 'members/:member/questions' => 'member_question#index', as: :member_question_list
+  
+  get 'meta' => 'meta#index', as: :meta_list
+  get 'meta/cookies' => 'meta#cookies', as: :meta_cookies
 end

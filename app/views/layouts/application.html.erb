@@ -33,7 +33,6 @@
 			<%= content_tag( 'h1', @multiline_page_title || @page_title || 'Question Checker' ) %>
 			<%= yield %>
 		</main>
-		<footer>
-		</footer>
+		<%= render :partial => 'layouts/footer' %>
 	</body>
 </html>
