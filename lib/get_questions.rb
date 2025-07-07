@@ -112,6 +112,11 @@ module GetQuestions
           
           # ... we set the date for answer to the tabling date plus seven days.
           date_for_answer = tabled_on + 7.days
+          
+        # Otherwise, if the tabling date is later than the cut off date ...
+        else
+        
+          # We do nothing because we want this method to return a nil date for answer.
         end
       end
     
