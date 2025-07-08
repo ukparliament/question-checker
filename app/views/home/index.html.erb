@@ -1,0 +1,14 @@
+<p>A tool for House of Commons librarians to help confirm which written questions remain unanswered past the point where convention suggests an answer might be expected.<p>
+
+<p>All data is sourced from the <%= link_to( 'Written Questions Service API', 'https://questions-statements-api.parliament.uk/index.html' ) %> and includes three types of written question.</p>
+
+<ol>
+	<li>Dates for answer for questions in the House of Lords are sourced directly from the API. These are set to be 10 working days following the tabling of the question.</li>
+	<li>Dates for answer for 'named day' questions in the House of Commons are also sourced directly from the API. They are set to be the date by which the Member requested an answer.</li>
+	<li>Dates for answer for 'ordinary' questions in the House of Lords are set at 7 calendar days following the tabling of the question, following the <%= link_to( 'convention set out here', 'https://www.parliament.uk/about/how/business/written-answers/' ) %>. 'Ordinary' questions with a tabling date less than 8 days ago are not included.</li>
+</ol>
+
+
+
+
+

@@ -5,7 +5,7 @@ module QuestionHelper
     if question.is_named_day
       description += 'A named day '
     else
-      description += 'An ordinary day '
+      description += "An 'ordinary' "
     end
     description += 'question, tabled in the '
     if question.house == 'Commons'
