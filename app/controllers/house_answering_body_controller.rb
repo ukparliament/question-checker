@@ -51,22 +51,18 @@ class HouseAnsweringBodyController < ApplicationController
   
       # ... we get the questions for this answering body in the House of Commons.
       @questions = get_questions( 'Commons', answering_body, nil )
-    
-      # We set the page meta information.
-      @page_title = "Houses of Commons - Questions tabled to the #{@questions.first.answering_body_name}"
-      @multiline_page_title = "House of Commons <span class='subhead'>Questions tabled to the #{@questions.first.answering_body_name}</span>".html_safe
-      @description = "Questions tabled to the #{@questions.first.answering_body_name} in the House of Commons."
-    
+      
+      # We set the House name.
+      house_name = 'House of Commons'
+      
     # Otherwise, if the House ID is 2 ...
     elsif house == 2
   
       # ... we get the questions for this answering body in the House of Lords.
       @questions = get_questions( 'Lords', answering_body, nil )
-    
-      # We set the page meta information.
-      @page_title = "Houses of Lords - Questions tabled to the #{@questions.first.answering_body_name}"
-      @multiline_page_title = "House of Lords <span class='subhead'>Questions tabled to the #{@questions.first.answering_body_name}</span>".html_safe
-      @description = "Questions tabled to the #{@questions.first.answering_body_name} in the House of Lords."
+      
+      # We set the House name.
+      house_name = 'House of Lords'
     
     # Otherwise, if the House ID is neither 1 nor 2 ...
     else
@@ -74,9 +70,23 @@ class HouseAnsweringBodyController < ApplicationController
       # ... we raise a record not found error.
       raise ActiveRecord::RecordNotFound
     end
-  
-    # We set the page meta information.
-    @section = 'houses'
-    @subsection = 'answering-bodies'
+    
+    # We respond to CSV and HTML.
+    respond_to do |format|
+      format.csv {
+        response.headers['Content-Disposition'] = "attachment; filename=\"#{house_name.downcase.gsub(' ', '-')}-questions-tabled-to-#{@questions.first.answering_body_name.downcase.gsub(' ', '-').gsub(',', '')}.csv\""
+        render :template => 'question/index'
+      }
+      format.html {
+        
+        # We set the page meta information.
+        @page_title = "#{house_name} - Questions tabled to the #{@questions.first.answering_body_name}"
+        @multiline_page_title = "#{house_name} <span class='subhead'>Questions tabled to the #{@questions.first.answering_body_name}</span>".html_safe
+        @description = "Questions tabled to the #{@questions.first.answering_body_name} in the #{house_name}."
+        @csv_url = house_answering_body_show_url( :format => 'csv' )
+        @section = 'houses'
+        @subsection = 'answering-bodies'
+      }
+    end
   end
 end

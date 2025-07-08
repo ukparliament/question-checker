@@ -17,6 +17,9 @@
 		<%# Includes all stylesheet files in app/assets/stylesheets %>
 		<%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
 		<%= javascript_importmap_tags %>
+		<% if @csv_url -%>
+			<link rel="alternate" href="<%= @csv_url %>" type="text/csv">
+		<% end -%>
 	</head>
 	<body>
 		<header>
@@ -33,6 +36,9 @@
 		<main>
 			<%= content_tag( 'h1', @multiline_page_title || @page_title || 'Question Checker' ) %>
 			<%= yield %>
+			<% if @csv_url -%>
+				<%= csv_link( @csv_url ) %>
+			<% end -%>
 		</main>
 		<%= render :partial => 'layouts/footer' %>
 	</body>

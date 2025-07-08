@@ -44,6 +44,7 @@ class HouseController < ApplicationController
     end
     
     # We set the page meta information.
+    @csv_url = house_question_list_url( :format => 'csv' )
     @section = 'houses'
     @subsection = 'questions'
     

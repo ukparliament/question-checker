@@ -11,6 +11,7 @@ class QuestionController < ApplicationController
     # We set the page meta information.
     @page_title = 'All questions'
     @description = "All questions."
+    @csv_url = question_list_url( :format => 'csv' )
     @section = 'questions'
   end
 end

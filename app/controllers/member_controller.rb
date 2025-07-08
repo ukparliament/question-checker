@@ -25,6 +25,7 @@ class MemberController < ApplicationController
     # We set the page meta information.
     @page_title = @questions.first.asking_member_name
     @description = "#{@questions.first.asking_member_name}."
+    @csv_url = member_question_list_url( :format => 'csv' )
     @section = 'members'
     
     render :template => 'member_question/index'

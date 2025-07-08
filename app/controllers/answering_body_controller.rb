@@ -25,6 +25,7 @@ class AnsweringBodyController < ApplicationController
     # We set the page meta information.
     @page_title = @questions.first.answering_body_name
     @description = "#{@questions.first.answering_body_name}."
+    @csv_url = answering_body_question_list_url( :format => 'csv' )
     @section = 'answering-bodies'
     
     render :template => 'answering_body_question/index'

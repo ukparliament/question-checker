@@ -13,4 +13,8 @@ module ApplicationHelper
     list_item_count_sentence += '.'
     list_item_count_sentence = content_tag( 'p', list_item_count_sentence )
   end
+  
+  def csv_link(url )
+		link_to( content_tag( 'abbr', 'CSV' ), url, :title => 'Download this data', :class => 'csv' ) + ' ' + link_to( 'Download this data' , url)
+  end
 end

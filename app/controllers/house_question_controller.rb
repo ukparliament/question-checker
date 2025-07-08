@@ -12,10 +12,8 @@ class HouseQuestionController < ApplicationController
       # ... we get the questions for the House of Commons.
       @questions = get_questions( 'Commons', nil, nil )
       
-      # We set the page meta information.
-      @page_title = 'Houses of Commons - Questions'
-      @multiline_page_title = "House of Commons <span class='subhead'>Questions</span>".html_safe
-      @description = "Questions tabled in the Houses of Commons."
+      # We set the House name.
+      house_name = 'House of Commons'
       
     # Otherwise, if the House ID is 2 ...
     elsif house == 2
@@ -23,10 +21,8 @@ class HouseQuestionController < ApplicationController
       # ... we get the questions for the House of Lords.
       @questions = get_questions( 'Lords', nil, nil )
       
-      # We set the page meta information.
-      @page_title = 'Houses of Lords - Question'
-      @multiline_page_title = "House of Lords <span class='subhead'>Questions</span>".html_safe
-      @description = "Questions tabled in the Houses of Lords."
+      # We set the House name.
+      house_name = 'House of Lords'
       
     # Otherwise, if the House ID is neither 1 nor 2 ...
     else
@@ -35,8 +31,22 @@ class HouseQuestionController < ApplicationController
       raise ActiveRecord::RecordNotFound
     end
     
-    # We set the page meta information.
-    @section = 'houses'
-    @subsection = 'questions'
+    # We respond to CSV and HTML.
+    respond_to do |format|
+      format.csv {
+        response.headers['Content-Disposition'] = "attachment; filename=\"#{house_name.downcase.gsub(' ', '-')}-questions.csv\""
+        render :template => 'question/index'
+      }
+      format.html {
+        
+        # We set the page meta information.
+        @page_title = "#{house_name} - Questions"
+        @multiline_page_title = "#{house_name} <span class='subhead'>Questions</span>".html_safe
+        @description = "Questions tabled in the #{house_name}."
+        @csv_url = house_question_list_url( :format => 'csv' )
+        @section = 'houses'
+        @subsection = 'questions'
+      }
+    end
   end
 end
