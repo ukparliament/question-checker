@@ -12,6 +12,31 @@ class AnsweringBodyController < ApplicationController
     @page_title = 'Answering bodies'
     @description = "Answering bodies."
     @section = 'answering-bodies'
+    
+    # We allow for table sorting.
+    @sort = params[:sort]
+    @order = params[:order]
+    if @order and @sort
+      case @order
+        when 'descending'
+          case @sort
+            when 'answering-body'
+              @answering_bodies.sort_by! {|answering_body| answering_body.name}.reverse!
+            when 'question-count'
+              @answering_bodies.sort_by! {|answering_body| answering_body.question_count}.reverse!
+        end
+        when 'ascending'
+          case @sort
+            when 'answering-body'
+              @answering_bodies.sort_by! {|answering_body| answering_body.name}
+            when 'question-count'
+              @answering_bodies.sort_by! {|answering_body| answering_body.question_count}
+        end
+      end
+    else
+      @sort = 'answering-body'
+      @order = 'ascending'
+    end
   end
   
   def show
