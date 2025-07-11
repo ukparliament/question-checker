@@ -1,1 +1,4 @@
-<%= content_tag( 'li', link_to( "#{answering_body.name} (#{answering_body.question_count})", answering_body_show_url( :answering_body => answering_body.id ) ) ) %>
+<tr>
+	<%= content_tag( 'td', link_to( answering_body.name, answering_body_show_url( :answering_body => answering_body.id ) ) ) %>
+	<%= content_tag( 'td', answering_body.question_count ) %>
+</tr>
