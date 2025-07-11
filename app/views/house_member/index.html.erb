@@ -2,7 +2,7 @@
 
 <%= list_item_count_sentence( 'tabling Member', @members.size ) %>
 
-<table>
+<table id="members">
 	<%= render :partial => 'table_head' %>
 	<tbody>
 		<%= render :partial => 'member/member', :collection => @members %>

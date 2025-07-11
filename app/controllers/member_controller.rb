@@ -12,6 +12,31 @@ class MemberController < ApplicationController
     @page_title = 'Tabling Members'
     @description = "Tabling Members."
     @section = 'members'
+    
+    # We allow for table sorting.
+    @sort = params[:sort]
+    @order = params[:order]
+    if @order and @sort
+      case @order
+        when 'descending'
+          case @sort
+            when 'member-name'
+              @members.sort_by! {|member| member.sort_name}.reverse!
+            when 'question-count'
+              @members.sort_by! {|member| member.question_count}.reverse!
+        end
+        when 'ascending'
+          case @sort
+            when 'member-name'
+              @members.sort_by! {|member| member.sort_name}
+            when 'question-count'
+              @members.sort_by! {|member| member.question_count}
+        end
+      end
+    else
+      @sort = 'member-name'
+      @order = 'ascending'
+    end
   end
   
   def show

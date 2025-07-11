@@ -1,6 +1,26 @@
 <thead>
 	<tr>
-		<%= content_tag( 'td', 'Member' ) %>
-		<%= content_tag( 'td', 'Number of questions' ) %>
+		<td class="default-ascending">
+			<% if @sort == 'member-name' -%>
+				<% if @order == 'ascending' -%>
+					<%= link_to( 'Member', house_member_list_url( :sort => 'member-name', :order => 'descending', :anchor => 'members' ), :class => 'sorted', :title => 'Sort by Member name' ) %>
+				<% else -%>
+					<%= link_to( 'Member', house_member_list_url( :anchor => 'members' ), :class => 'sorted', :title => 'Sort by Member name' ) %>
+				<% end -%>
+			<% else -%>
+				<%= link_to( 'Member', house_member_list_url( :anchor => 'members' ), :class => 'sorted', :title => 'Sort by Member name' ) %>
+			<% end -%>
+		</td>
+		<td class="default-decending">
+			<% if @sort == 'question-count' -%>
+				<% if @order == 'ascending' -%>
+					<%= link_to( 'Question count', house_member_list_url( :sort => 'question-count', :order => 'descending', :anchor => 'members' ), :class => 'sorted', :title => 'Sort by question count' ) %>
+				<% else -%>
+					<%= link_to( 'Question count', house_member_list_url( :sort => 'question-count', :order => 'ascending', :anchor => 'members' ), :class => 'sorted', :title => 'Sort by question count' ) %>
+				<% end -%>
+			<% else -%>
+				<%= link_to( 'Question count', house_member_list_url( :sort => 'question-count', :order => 'descending', :anchor => 'members' ), :class => 'sorted', :title => 'Sort by question count' ) %>
+			<% end -%>
+		</td>
 	</tr>
 </thead>
