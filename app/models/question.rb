@@ -21,12 +21,4 @@ class Question
   def url
     "https://questions-statements.parliament.uk/written-questions/detail/#{self.tabled_on}/#{self.uin}"
   end
-  
-  def heading_clean
-    CGI.unescapeHTML( self.heading )
-  end
-  
-  def text_clean
-    CGI.unescapeHTML( self.text )
-  end
 end
