@@ -8,6 +8,8 @@
 		<meta name="mobile-web-app-capable" content="yes">
 		<%= csrf_meta_tags %>
 		<%= csp_meta_tag %>
+		<%= render 'design_system_gem/design_system_stylesheets' %>
+		<%= stylesheet_link_tag "application" %>
 		<%= yield :head %>
 		<%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
 		<%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
@@ -21,24 +23,24 @@
 		<% end -%>
 	</head>
 	<body>
-		<header>
-			<%= content_tag( 'p', link_to( 'Question Checker', root_url ) ) %>
-			<nav>
-				<p>
-					<%= link_to( 'All questions', question_list_url, :class => 'questions' ) %>
-					<%= link_to( 'By house', house_list_url, :class => 'houses' ) %>
-					<%= link_to( 'By answering body', answering_body_list_url, :class => 'answering-bodies' ) %>
-					<%= link_to( 'By tabling Member', member_list_url, :class => 'members' ) %>
-				</p>
-			</nav>
-		</header>
-		<main>
+		<%= render 'design_system_gem/header/header' do %>
+			<!-- nav content -->
+			<p>
+				<%= link_to( 'All questions', question_list_url, :class => 'questions' ) %>
+				<%= link_to( 'By house', house_list_url, :class => 'houses' ) %>
+				<%= link_to( 'By answering body', answering_body_list_url, :class => 'answering-bodies' ) %>
+				<%= link_to( 'By tabling Member', member_list_url, :class => 'members' ) %>
+			</p>
+		<% end %>
+
+			<main class="container block block-page" id="main-content">
+
 			<%= content_tag( 'h1', @multiline_page_title || @page_title || 'Question Checker' ) %>
 			<%= yield %>
 			<% if @csv_url -%>
 				<%= csv_link( @csv_url ) %>
 			<% end -%>
 		</main>
-		<%= render :partial => 'layouts/footer' %>
+		<%= render 'design_system_gem/footer' %>
 	</body>
 </html>
