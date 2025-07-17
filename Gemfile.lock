@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/jamesjefferies/design_system_gem.git
+  revision: 6027aa959b86a590e679feb621ab2ca5f82bb7f9
+  specs:
+    design_system_gem (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -271,6 +277,7 @@ DEPENDENCIES
   brakeman
   capybara
   debug
+  design_system_gem!
   irb
   propshaft
   puma
