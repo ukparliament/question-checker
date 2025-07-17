@@ -9,9 +9,6 @@ gem "propshaft"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma"
 
-# Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
-gem "importmap-rails"
-
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 
