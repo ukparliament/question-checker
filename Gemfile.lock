@@ -1,8 +1,9 @@
 GIT
-  remote: https://github.com/jamesjefferies/design_system_gem.git
-  revision: 6027aa959b86a590e679feb621ab2ca5f82bb7f9
+  remote: https://github.com/ukparliament/design-assets.git
+  revision: 8c38a77c67d9b1ad89cbd61c17114c51fbcb6827
+  glob: library_design/*.gemspec
   specs:
-    design_system_gem (0.1.0)
+    library_design (0.1.0)
 
 GEM
   remote: https://rubygems.org/
@@ -277,8 +278,8 @@ DEPENDENCIES
   brakeman
   capybara
   debug
-  design_system_gem!
   irb
+  library_design!
   propshaft
   puma
   rails (~> 8.0.2)
