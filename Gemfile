@@ -18,7 +18,7 @@ gem "bootsnap", require: false
 # Best add explicitly
 gem 'irb'
 
-gem "design_system_gem", github: "jamesjefferies/design_system_gem"
+gem "library_design", github: "ukparliament/design-assets", glob: 'library_design/*.gemspec'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

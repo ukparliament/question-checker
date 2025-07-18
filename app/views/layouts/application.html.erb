@@ -8,7 +8,7 @@
 		<meta name="mobile-web-app-capable" content="yes">
 		<%= csrf_meta_tags %>
 		<%= csp_meta_tag %>
-		<%= render 'design_system_gem/design_system_stylesheets' %>
+		<%= render 'library_design/library_design_stylesheets' %>
 		<%= stylesheet_link_tag "application" %>
 		<%= yield :head %>
 		<%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
@@ -23,7 +23,7 @@
 		<% end -%>
 	</head>
 	<body>
-		<%= render 'design_system_gem/header/header' do %>
+		<%= render 'library_design/header/header' do %>
 			<!-- nav content -->
 			<p>
 				<%= link_to( 'All questions', question_list_url, :class => 'questions' ) %>
@@ -41,6 +41,6 @@
 				<%= csv_link( @csv_url ) %>
 			<% end -%>
 		</main>
-		<%= render 'design_system_gem/footer' %>
+		<%= render 'library_design/footer' %>
 	</body>
 </html>
