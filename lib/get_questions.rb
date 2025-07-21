@@ -17,7 +17,7 @@ module GetQuestions
     take = 5000
   
     # We construct the API URL.
-    url = "https://questions-statements-api.parliament.uk/api/writtenquestions/questions?dateForAnswerWhenTo=#{late_for_answer_date}&answered=Unanswered&questionStatus=NotAnswered&includeWithdrawn=false&sessionStatus=Any&expandMember=True&take=#{take}"
+    url = "https://questions-statements-api.parliament.uk/api/writtenquestions/questions?dateForAnswerWhenTo=#{late_for_answer_date}&answered=Unanswered&questionStatus=NotAnswered&includeWithdrawn=false&sessionStatus=Current&expandMember=True&take=#{take}"
     url += "&house=#{house}" if house
     url += "&answeringBodies=#{answering_body}" if answering_body
     url += "&askingMemberId=#{asking_member}" if asking_member
