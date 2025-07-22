@@ -18,6 +18,13 @@ class Question
     self.heading || 'Untitled'
   end
   
+  def title_with_uin
+    title = self.title
+    title += ' ('
+    title += self.uin
+    title += ')'
+  end
+  
   def url
     "https://questions-statements.parliament.uk/written-questions/detail/#{self.tabled_on}/#{self.uin}"
   end
