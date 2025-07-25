@@ -8,3 +8,19 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+
+
+/* Main navigation active states */
+body.section-questions nav#header-nav a.questions {
+	border-bottom-color: #fff;
+}
+body.section-houses nav#header-nav a.houses {
+	border-bottom-color: #fff;
+}
+body.section-answering-bodies nav#header-nav a.answering-bodies {
+	border-bottom-color: #fff;
+}
+body.section-members nav#header-nav a.members {
+	border-bottom-color: #fff;
+}
