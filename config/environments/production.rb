@@ -20,6 +20,7 @@ Rails.application.configure do
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.asset_host = "http://assets.example.com"
+  config.asset_host = ENV.fetch("ASSET_HOST", "https://question-checker-27df5d070358.herokuapp.com/")
 
   # Assume all access to the app is happening through a SSL-terminating reverse proxy.
   config.assume_ssl = true

@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/ukparliament/design-assets.git
+  revision: 0fab4e134685fb1f45e31a9f88393faa3292662a
+  tag: 0.1.8
+  glob: library_design/*.gemspec
+  specs:
+    library_design (0.1.8)
+      rack-cors (~> 3.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -165,6 +174,9 @@ GEM
       nio4r (~> 2.0)
     racc (1.8.1)
     rack (3.1.16)
+    rack-cors (3.0.0)
+      logger
+      rack (>= 3.0.14)
     rack-session (2.1.1)
       base64 (>= 0.1.0)
       rack (>= 3.0.0)
@@ -272,6 +284,7 @@ DEPENDENCIES
   capybara
   debug
   irb
+  library_design!
   propshaft
   puma
   rails (~> 8.0.2)

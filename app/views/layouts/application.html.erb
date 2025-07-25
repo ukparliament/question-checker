@@ -14,31 +14,27 @@
 		<link rel="icon" href="/icon.png" type="image/png">
 		<link rel="icon" href="/icon.svg" type="image/svg+xml">
 		<link rel="apple-touch-icon" href="/icon.png">
-		<%# Includes all stylesheet files in app/assets/stylesheets %>
+		
 		<%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+		
+		<%= render 'library_design/library_design_stylesheets' %>
+		<%= stylesheet_link_tag "application" %>
+		
+		<%= render :partial => 'library_design/head/json_ld/crumb', :object => @crumb %>
+		
 		<% if @csv_url -%>
 			<link rel="alternate" href="<%= @csv_url %>" type="text/csv">
 		<% end -%>
 	</head>
 	<body>
-		<header>
-			<%= content_tag( 'p', link_to( 'Question Checker', root_url ) ) %>
-			<nav>
-				<p>
-					<%= link_to( 'All questions', question_list_url, :class => 'questions' ) %>
-					<%= link_to( 'By house', house_list_url, :class => 'houses' ) %>
-					<%= link_to( 'By answering body', answering_body_list_url, :class => 'answering-bodies' ) %>
-					<%= link_to( 'By tabling Member', member_list_url, :class => 'members' ) %>
-				</p>
-			</nav>
-		</header>
-		<main>
+		<%= render :partial => 'layouts/header' %>
+		<main class="container block block-page" id="main-content">
 			<%= content_tag( 'h1', @multiline_page_title || @page_title || 'Question Checker' ) %>
 			<%= yield %>
 			<% if @csv_url -%>
 				<%= csv_link( @csv_url ) %>
 			<% end -%>
 		</main>
-		<%= render :partial => 'layouts/footer' %>
+		<%= render :partial => 'library_design/footer' %>
 	</body>
 </html>
