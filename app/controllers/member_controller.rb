@@ -11,6 +11,7 @@ class MemberController < ApplicationController
     # We set the page meta information.
     @page_title = 'Tabling Members'
     @description = "Tabling Members."
+    @crumb << { label: 'Tabling Members', url: nil }
     @section = 'members'
     
     # We allow for table sorting.
@@ -50,6 +51,8 @@ class MemberController < ApplicationController
     # We set the page meta information.
     @page_title = @questions.first.asking_member_name
     @description = "#{@questions.first.asking_member_name}."
+    @crumb << { label: 'Tabling Members', url: member_list_url }
+    @crumb << { label: @questions.first.asking_member_name, url: nil }
     @csv_url = member_question_list_url( :format => 'csv' )
     @section = 'members'
     

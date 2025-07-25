@@ -44,6 +44,9 @@ class HouseQuestionController < ApplicationController
         @multiline_page_title = "#{house_name} <span class='subhead'>Questions</span>".html_safe
         @description = "Questions tabled in the #{house_name}."
         @csv_url = house_question_list_url( :format => 'csv' )
+        @crumb << { label: 'Houses', url: house_list_url }
+        @crumb << { label: house_name, url: house_show_url }
+        @crumb << { label: 'Questions', url: nil }
         @section = 'houses'
         @subsection = 'questions'
       }

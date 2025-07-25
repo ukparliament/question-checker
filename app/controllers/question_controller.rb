@@ -12,6 +12,7 @@ class QuestionController < ApplicationController
     @page_title = 'All questions'
     @description = "All questions."
     @csv_url = question_list_url( :format => 'csv' )
+    @crumb << { label: 'All questions', url: nil }
     @section = 'questions'
   end
 end

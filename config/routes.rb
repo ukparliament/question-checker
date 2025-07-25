@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root 'home#index', as: :root
+  root 'home#index', as: :home
   
   get 'questions' => 'question#index', as: :question_list
   

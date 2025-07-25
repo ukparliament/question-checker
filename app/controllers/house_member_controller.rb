@@ -6,6 +6,8 @@ class HouseMemberController < ApplicationController
   def index
     house = params[:house].to_i
     
+    @crumb << { label: 'Houses', url: house_list_url }
+    
     # If the House ID is 1 ...
     if house == 1
     
@@ -16,6 +18,7 @@ class HouseMemberController < ApplicationController
       @page_title = 'Houses of Commons - Members'
       @multiline_page_title = "House of Commons <span class='subhead'>Members</span>".html_safe
       @description = "Houses of Commons Members."
+      @crumb << { label: 'House of Commons', url: house_show_url }
       
     # Otherwise, if the House ID is 2 ...
     elsif house == 2
@@ -27,6 +30,7 @@ class HouseMemberController < ApplicationController
       @page_title = 'Houses of Lords - Members'
       @multiline_page_title = "House of Lords <span class='subhead'>Members</span>".html_safe
       @description = "Houses of Lords Members."
+      @crumb << { label: 'House of Lords', url: house_show_url }
       
     # Otherwise, if the House ID is neither 1 nor 2 ...
     else
@@ -38,6 +42,7 @@ class HouseMemberController < ApplicationController
     # We set the page meta information.
     @section = 'houses'
     @subsection = 'members'
+    @crumb << { label: 'Members', url: nil }
     
     # We allow for table sorting.
     @sort = params[:sort]
