@@ -8,11 +8,14 @@ class HouseController < ApplicationController
     # We set the page meta information.
     @page_title = 'Houses'
     @description = "Houses."
+    @crumb << { label: 'Houses', url: nil }
     @section = 'houses'
   end
   
   def show
     house = params[:house].to_i
+    
+    @crumb << { label: 'Houses', url: house_list_url }
     
     # If the House ID is 1 ...
     if house == 1
@@ -24,6 +27,7 @@ class HouseController < ApplicationController
       @page_title = 'Houses of Commons - Questions'
       @multiline_page_title = "House of Commons <span class='subhead'>Questions</span>".html_safe
       @description = "Questions tabled in the Houses of Commons."
+      @crumb << { label: 'House of Commons', url: nil }
       
     # Otherwise, if the House ID is 2 ...
     elsif house == 2
@@ -35,6 +39,7 @@ class HouseController < ApplicationController
       @page_title = 'Houses of Lords - Questions'
       @multiline_page_title = "House of Lords <span class='subhead'>Questions</span>".html_safe
       @description = "Questions tabled in the Houses of Lords."
+      @crumb << { label: 'House of Lords', url: nil }
       
     # Otherwise, if the House ID is neither 1 nor 2 ...
     else
