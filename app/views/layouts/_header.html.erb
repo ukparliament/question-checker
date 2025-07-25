@@ -1,0 +1,6 @@
+<%= render 'library_design/header/header' do %>
+	<%= link_to( 'All questions', question_list_url, :class => 'questions' ) %>
+	<%= link_to( 'By house', house_list_url, :class => 'houses' ) %>
+	<%= link_to( 'By answering body', answering_body_list_url, :class => 'answering-bodies' ) %>
+	<%= link_to( 'By tabling Member', member_list_url, :class => 'members' ) %>
+<% end %>
