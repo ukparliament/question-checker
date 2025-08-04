@@ -8,10 +8,8 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
-
-
-
-/* Main navigation active states */
+ 
+ /* Main navigation active states */
 body.section-questions nav#header-nav a.questions {
 	border-bottom-color: #fff;
 }
@@ -23,4 +21,18 @@ body.section-answering-bodies nav#header-nav a.answering-bodies {
 }
 body.section-members nav#header-nav a.members {
 	border-bottom-color: #fff;
+}
+
+/* Secondary navigation active states */
+body.subsection-questions .subnav a.questions {
+	border-bottom-color: #373151;
+	color: #5f2db4;
+}
+body.subsection-answering-bodies .subnav a.answering-bodies {
+	border-bottom-color: #373151;
+	color: #5f2db4;
+}
+body.subsection-members .subnav a.members {
+	border-bottom-color: #373151;
+	color: #5f2db4;
 }
