@@ -1,4 +1,4 @@
 <tr>
 	<%= content_tag( 'td', link_to( member.sort_name, member_show_url( :member => member.id ) ) ) %>
-	<%= content_tag( 'td', member.question_count ) %>
+	<%= content_tag( 'td', member.question_count, :class => 'number' ) %>
 </tr>
