@@ -1,7 +1,5 @@
-<nav class="subnav">
-	<p>
-		<%= link_to( 'Questions', house_show_url ) %>
-		<%= link_to( 'Answering bodies', house_answering_body_list_url ) %>
-		<%= link_to( 'Members', house_member_list_url ) %>
-	</p>
-</nav>
+<%= render 'library_design/subnav/subnav' do %>
+	<%= link_to( 'Questions', house_show_url, :class => 'questions' ) %>
+	<%= link_to( 'Answering bodies', house_answering_body_list_url, :class => 'answering-bodies' ) %>
+	<%= link_to( 'Members', house_member_list_url, :class => 'members' ) %>
+<% end %>
