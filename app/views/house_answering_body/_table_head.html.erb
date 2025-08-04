@@ -1,6 +1,6 @@
 <thead>
 	<tr>
-		<td class="default-ascending">
+		<th class="default-ascending">
 			<% if @sort == 'answering-body' -%>
 				<% if @order == 'ascending' -%>
 					<%= link_to( 'Answering body', house_answering_body_list_url( :sort => 'answering-body', :order => 'descending', :anchor => 'answering-bodies' ), :class => 'sorted', :title => 'Sort by answering body' ) %>
@@ -8,10 +8,10 @@
 					<%= link_to( 'Answering body', house_answering_body_list_url( :anchor => 'answering-bodies' ), :class => 'sorted', :title => 'Sort by answering body' ) %>
 				<% end -%>
 			<% else -%>
-				<%= link_to( 'Answering body', house_answering_body_list_url( :anchor => 'answering-bodies' ), :class => 'sorted', :title => 'Sort by answering body' ) %>
+				<%= link_to( 'Answering body', house_answering_body_list_url( :anchor => 'answering-bodies' ), :title => 'Sort by answering body' ) %>
 			<% end -%>
-		</td>
-		<td class="default-decending">
+		</th>
+		<th class="default-decending number">
 			<% if @sort == 'question-count' -%>
 				<% if @order == 'ascending' -%>
 					<%= link_to( 'Question count', house_answering_body_list_url( :sort => 'question-count', :order => 'descending', :anchor => 'answering-bodies' ), :class => 'sorted', :title => 'Sort by question count' ) %>
@@ -19,8 +19,8 @@
 					<%= link_to( 'Question count', house_answering_body_list_url( :sort => 'question-count', :order => 'ascending', :anchor => 'answering-bodies' ), :class => 'sorted', :title => 'Sort by question count' ) %>
 				<% end -%>
 			<% else -%>
-				<%= link_to( 'Question count', house_answering_body_list_url( :sort => 'question-count', :order => 'descending', :anchor => 'answering-bodies' ), :class => 'sorted', :title => 'Sort by question count' ) %>
+				<%= link_to( 'Question count', house_answering_body_list_url( :sort => 'question-count', :order => 'descending', :anchor => 'answering-bodies' ), :title => 'Sort by question count' ) %>
 			<% end -%>
-		</td>
+		</th>
 	</tr>
 </thead>
