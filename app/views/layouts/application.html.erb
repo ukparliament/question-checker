@@ -26,7 +26,7 @@
 			<link rel="alternate" href="<%= @csv_url %>" type="text/csv">
 		<% end -%>
 	</head>
-	<body class="section-<%= @section %> subsection-<%= @subsection %>">
+	<body class="section-<%= @section %> subsection-<%= @subsection %> brand-bicameral">
 		<%= render :partial => 'layouts/header' %>
 		<main class="container block block-page" id="main-content">
 			<%= content_tag( 'h1', @multiline_page_title || @page_title || 'Question Checker' ) %>
