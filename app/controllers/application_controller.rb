@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   
   include LibraryDesign::Crumbs
   
-  $SITE_TITLE = 'Question checker'
+  $SITE_TITLE = 'Question Checker'
   
   $DATE_DISPLAY_FORMAT = '%-d %B %Y'
 end
