@@ -1,6 +1,6 @@
 <thead>
 	<tr>
-		<td class="default-ascending">
+		<th class="default-ascending">
 			<% if @sort == 'member-name' -%>
 				<% if @order == 'ascending' -%>
 					<%= link_to( 'Member', member_list_url( :sort => 'member-name', :order => 'descending', :anchor => 'members' ), :class => 'sorted', :title => 'Sort by Member name' ) %>
@@ -8,10 +8,10 @@
 					<%= link_to( 'Member', member_list_url( :anchor => 'members' ), :class => 'sorted', :title => 'Sort by Member name' ) %>
 				<% end -%>
 			<% else -%>
-				<%= link_to( 'Member', member_list_url( :anchor => 'members' ), :class => 'sorted', :title => 'Sort by Member name' ) %>
+				<%= link_to( 'Member', member_list_url( :anchor => 'members' ), :title => 'Sort by Member name' ) %>
 			<% end -%>
-		</td>
-		<td class="default-decending">
+		</th>
+		<th class="default-decending number">
 			<% if @sort == 'question-count' -%>
 				<% if @order == 'ascending' -%>
 					<%= link_to( 'Question count', member_list_url( :sort => 'question-count', :order => 'descending', :anchor => 'members' ), :class => 'sorted', :title => 'Sort by question count' ) %>
@@ -19,8 +19,8 @@
 					<%= link_to( 'Question count', member_list_url( :sort => 'question-count', :order => 'ascending', :anchor => 'members' ), :class => 'sorted', :title => 'Sort by question count' ) %>
 				<% end -%>
 			<% else -%>
-				<%= link_to( 'Question count', member_list_url( :sort => 'question-count', :order => 'descending', :anchor => 'members' ), :class => 'sorted', :title => 'Sort by question count' ) %>
+				<%= link_to( 'Question count', member_list_url( :sort => 'question-count', :order => 'descending', :anchor => 'members' ), :title => 'Sort by question count' ) %>
 			<% end -%>
-		</td>
+		</th>
 	</tr>
 </thead>
