@@ -25,14 +25,11 @@ body.section-members nav#header-nav a.members {
 
 /* Secondary navigation active states */
 body.subsection-questions .subnav a.questions {
-	border-bottom-color: #373151;
-	color: #5f2db4;
+	border-bottom-color: #CBC9CD;
 }
 body.subsection-answering-bodies .subnav a.answering-bodies {
-	border-bottom-color: #373151;
-	color: #5f2db4;
+	border-bottom-color: #CBC9CD;
 }
 body.subsection-members .subnav a.members {
-	border-bottom-color: #373151;
-	color: #5f2db4;
+	border-bottom-color: #CBC9CD;
 }
