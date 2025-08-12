@@ -56,6 +56,6 @@ class AnsweringBodyController < ApplicationController
     @crumb << { label: @questions.first.answering_body_name, url: nil }
     @section = 'answering-bodies'
     
-    render :template => 'answering_body_question/index'
+    render :template => 'question/index'
   end
 end

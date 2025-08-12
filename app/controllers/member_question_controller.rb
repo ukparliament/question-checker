@@ -15,7 +15,6 @@ class MemberQuestionController < ApplicationController
     respond_to do |format|
       format.csv {
         response.headers['Content-Disposition'] = "attachment; filename=\"questions-tabled-by-#{@questions.first.asking_member_name.downcase.gsub(' ', '-')}.csv\""
-        render :template => 'question/index'
       }
       format.html {
       
@@ -29,5 +28,6 @@ class MemberQuestionController < ApplicationController
         @section = 'members'
       }
     end
+    render :template => 'question/index'
   end
 end
