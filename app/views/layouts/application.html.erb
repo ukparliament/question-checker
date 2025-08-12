@@ -6,11 +6,8 @@
 	<body class="section-<%= @section %> subsection-<%= @subsection %> brand-bicameral">
 		<%= render :partial => 'layouts/header' %>
 		<main class="container block block-page" id="main-content">
-			<%= content_tag( 'h1', @multiline_page_title || @page_title || 'Question Checker' ) %>
+			<%= content_tag( 'h1', @multiline_page_title || @page_title || $SITE_TITLE ) %>
 			<%= yield %>
-			<% if @csv_url -%>
-				<%= csv_link( @csv_url ) %>
-			<% end -%>
 		</main>
 		<%= render :partial => 'library_design/footer' %>
 	</body>
