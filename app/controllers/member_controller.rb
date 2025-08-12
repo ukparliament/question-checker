@@ -56,6 +56,6 @@ class MemberController < ApplicationController
     @crumb << { label: @questions.first.asking_member_name, url: nil }
     @section = 'members'
     
-    render :template => 'member_question/index'
+    render :template => 'question/index'
   end
 end
