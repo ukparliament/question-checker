@@ -2,4 +2,6 @@
 
 <%= list_item_count_sentence( 'question', @questions.size ) %>
 
+<%= render :partial => 'library_design/feeds/feeds' %>
+
 <%= render :partial => 'question/question', :collection => @questions %>
