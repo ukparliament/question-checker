@@ -10,7 +10,6 @@ gem "propshaft"
 # Design system gem
 gem "library_design", github: "ukparliament/design-assets", glob: 'library_design/*.gemspec', tag: "0.2.16"
 
-
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma"
 
