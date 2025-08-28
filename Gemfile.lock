@@ -1,10 +1,10 @@
 GIT
   remote: https://github.com/ukparliament/design-assets.git
-  revision: 00fde455c0e334e62f08deb6f3bb57f81c5ea7ba
-  tag: 0.2.10
+  revision: 8eac27e87688c889b78463e0a6152a0ff76e4554
+  tag: 0.2.16
   glob: library_design/*.gemspec
   specs:
-    library_design (0.2.10)
+    library_design (0.2.16)
       rack-cors (~> 3.0.0)
 
 GEM
@@ -217,10 +217,10 @@ GEM
     rdoc (6.14.2)
       erb
       psych (>= 4.0.0)
-    regexp_parser (2.10.0)
+    regexp_parser (2.11.2)
     reline (0.6.2)
       io-console (~> 0.5)
-    rexml (3.4.1)
+    rexml (3.4.2)
     rspec-core (3.13.5)
       rspec-support (~> 3.13.0)
     rspec-expectations (3.13.5)
@@ -237,8 +237,8 @@ GEM
       rspec-expectations (~> 3.13)
       rspec-mocks (~> 3.13)
       rspec-support (~> 3.13)
-    rspec-support (3.13.4)
-    rubyzip (3.0.1)
+    rspec-support (3.13.5)
+    rubyzip (3.0.2)
     securerandom (0.4.1)
     selenium-webdriver (4.35.0)
       base64 (~> 0.2)
