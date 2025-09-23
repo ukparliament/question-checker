@@ -7,4 +7,6 @@ class ApplicationController < ActionController::Base
   $SITE_TITLE = 'Question Checker'
   
   $DATE_DISPLAY_FORMAT = '%-d %B %Y'
+  
+  $TOGGLE_PORTCULLIS = ENV.fetch( "TOGGLE_PORTCULLIS", 'off' )
 end
