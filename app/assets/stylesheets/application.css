@@ -10,26 +10,16 @@
  */
  
  /* Main navigation active states */
-body.section-questions nav#header-nav a.questions {
-	border-bottom-color: #fff;
-}
-body.section-houses nav#header-nav a.houses {
-	border-bottom-color: #fff;
-}
-body.section-answering-bodies nav#header-nav a.answering-bodies {
-	border-bottom-color: #fff;
-}
+body.section-questions nav#header-nav a.questions,
+body.section-houses nav#header-nav a.houses,
+body.section-answering-bodies nav#header-nav a.answering-bodies,
 body.section-members nav#header-nav a.members {
 	border-bottom-color: #fff;
 }
 
 /* Secondary navigation active states */
-body.subsection-questions .subnav a.questions {
-	border-bottom-color: #CBC9CD;
-}
-body.subsection-answering-bodies .subnav a.answering-bodies {
-	border-bottom-color: #CBC9CD;
-}
+body.subsection-questions .subnav a.questions,
+body.subsection-answering-bodies .subnav a.answering-bodies,
 body.subsection-members .subnav a.members {
 	border-bottom-color: #CBC9CD;
 }
