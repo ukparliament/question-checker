@@ -21,6 +21,7 @@ class AnsweringBodyQuestionController < ApplicationController
         # We set the page meta information.
         @page_title = @questions.first.answering_body_name
         @description = "#{@questions.first.answering_body_name}."
+        @canonical_url = answering_body_show_url
         @csv_url = answering_body_question_list_url( :format => 'csv' )
         @crumb << { label: 'Answering bodies', url: answering_body_list_url }
         @crumb << { label: @questions.first.answering_body_name, url: answering_body_show_url }
