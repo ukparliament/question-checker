@@ -3,7 +3,7 @@ source "https://rubygems.org"
 ruby file: '.tool-versions'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 8.1.3"
+gem "rails", "~> 8.1.4"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "propshaft"
 
@@ -21,7 +21,7 @@ gem "bootsnap", require: false
 
 # Best add explicitly
 gem 'irb'
-gem 'json', '<3'
+gem 'json'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
